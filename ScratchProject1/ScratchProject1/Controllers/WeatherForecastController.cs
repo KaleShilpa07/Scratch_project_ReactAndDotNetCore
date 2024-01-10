@@ -5,7 +5,7 @@ namespace ScratchProject1.Controllers
     [ApiController]
     [Route("[controller]")]
     public class WeatherForecastController : ControllerBase
-    {
+  
         // next comment.....
         private static readonly string[] Summaries = new[]
         {

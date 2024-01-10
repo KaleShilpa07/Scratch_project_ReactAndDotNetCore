@@ -2,7 +2,7 @@
 "SpaProxyServer": {
 "ServerUrl": "https://localhost:44466",
 "LaunchCommand": "npm start",
-"WorkingDirectory": "C:\\Users\\NTS-Shilpa Kale\\Source\\Repos\\Scratch_project_ReactAndDotNetCore\\ScratchProject1\\ScratchProject1\\ClientApp\\",
+"WorkingDirectory": "C:\\Users\\NTS-ShubhamJawale\\Desktop\\c#code\\ScratchProject1\\ScratchProject1\\ScratchProject1\\ClientApp\\",
 "MaxTimeoutInSeconds": "120"
 }
 }

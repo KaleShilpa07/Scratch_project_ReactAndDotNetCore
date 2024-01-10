@@ -1,0 +1,3 @@
+﻿<Project>
+  <Import Project="..\build\ScratchProject1.props" />
+</Project>

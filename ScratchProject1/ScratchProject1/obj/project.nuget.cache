@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "TxJuQKVyQBa9gRQw95V/YlpDoWvzH7wKTMn6KoOTLDktTx7h9exStLBapXDytZSN6Sa5oCtAvTy8nsTYOSwcsg==",
+  "dgSpecHash": "arEYNKZKr2MEPcSzmOVV5C+zVwGtnqEBLS5MZ48M7BA84AYjiDEZSZSv3EveXP8mkne92YM2XlzByp8i+LzHpw==",
   "success": true,
-  "projectFilePath": "C:\\Users\\NTS-Shilpa Kale\\Desktop\\NTS Assignments\\Assignments\\Asp.net Core\\ScratchProject1\\ScratchProject1\\ScratchProject1.csproj",
+  "projectFilePath": "C:\\Users\\NTS-Shilpa Kale\\Source\\Repos\\Scratch_project_ReactAndDotNetCore\\ScratchProject1\\ScratchProject1\\ScratchProject1.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\NTS-Shilpa Kale\\.nuget\\packages\\microsoft.aspnetcore.spaproxy\\6.0.16\\microsoft.aspnetcore.spaproxy.6.0.16.nupkg.sha512"
   ],

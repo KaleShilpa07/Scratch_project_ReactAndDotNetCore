@@ -66,3 +66,13 @@ C:\Users\NTS-Shilpa Kale\Source\Repos\Scratch_project_ReactAndDotNetCore\Scratch
 C:\Users\NTS-Shilpa Kale\Source\Repos\Scratch_project_ReactAndDotNetCore\ScratchProject1\ScratchProject1\obj\Debug\net6.0\spa.proxy.json
 C:\Users\NTS-Shilpa Kale\Source\Repos\Scratch_project_ReactAndDotNetCore\ScratchProject1\ScratchProject1\bin\Debug\net6.0\spa.proxy.json
 C:\Users\NTS-Shilpa Kale\Source\Repos\Scratch_project_ReactAndDotNetCore\ScratchProject1\ScratchProject1\bin\Debug\net6.0\Microsoft.AspNetCore.SpaProxy.dll
+C:\Users\NTS-Shilpa Kale\source\repos\Scratch_project_ReactAndDotNetCore\ScratchProject1\ScratchProject1\bin\Debug\net6.0\Microsoft.OpenApi.dll
+C:\Users\NTS-Shilpa Kale\source\repos\Scratch_project_ReactAndDotNetCore\ScratchProject1\ScratchProject1\bin\Debug\net6.0\Swashbuckle.AspNetCore.Swagger.dll
+C:\Users\NTS-Shilpa Kale\source\repos\Scratch_project_ReactAndDotNetCore\ScratchProject1\ScratchProject1\bin\Debug\net6.0\Swashbuckle.AspNetCore.SwaggerGen.dll
+C:\Users\NTS-Shilpa Kale\source\repos\Scratch_project_ReactAndDotNetCore\ScratchProject1\ScratchProject1\obj\Debug\net6.0\ScratchProject1.MvcApplicationPartsAssemblyInfo.cs
+C:\Users\NTS-Shilpa Kale\source\repos\Scratch_project_ReactAndDotNetCore\ScratchProject1\ScratchProject1\bin\Debug\net6.0\Swashbuckle.AspNetCore.SwaggerUI.dll
+C:\Users\NTS-Shilpa Kale\source\repos\Scratch_project_ReactAndDotNetCore\ScratchProject1\ScratchProject1\bin\Debug\net6.0\System.Net.Http.Formatting.dll
+C:\Users\NTS-Shilpa Kale\source\repos\Scratch_project_ReactAndDotNetCore\ScratchProject1\ScratchProject1\bin\Debug\net6.0\System.Web.Http.dll
+C:\Users\NTS-Shilpa Kale\source\repos\Scratch_project_ReactAndDotNetCore\ScratchProject1\ScratchProject1\bin\Debug\net6.0\Newtonsoft.Json.dll
+C:\Users\NTS-Shilpa Kale\source\repos\Scratch_project_ReactAndDotNetCore\ScratchProject1\ScratchProject1\bin\Debug\net6.0\Newtonsoft.Json.Bson.dll
+C:\Users\NTS-Shilpa Kale\source\repos\Scratch_project_ReactAndDotNetCore\ScratchProject1\ScratchProject1\bin\Debug\net6.0\System.Net.Mail.Abstractions.dll

@@ -1,4 +1,5 @@
-﻿using System.ComponentModel.DataAnnotations;
+﻿using ScratchProject1.Model;
+using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 
 namespace ScratchProject1
@@ -12,16 +13,27 @@ namespace ScratchProject1
         [Required]
         public string? Name { get; set; }
         [Required]
-        public string? Adress { get; set; }
+        public string? City { get; set; }
         [Required]
         public string? Age { get; set; }
         [Required]
-        public string? Class { get; set; }
-        public int SkillId { get; set; }
-        [ForeignKey("SkillId")]
-        //refference NP
-        public virtual Skill? Skills { get; set; }
+        public string? Standard { get; set; }
+        // New property for storing photo as byte array
+        public byte[]? Photo { get; set; }
 
+        // New property for storing base64 representation of the photo
+        [NotMapped] // This property is not mapped to the database
+        public string? PhotoBase64 { get; set; }
+        public DateTime? DOB { get; set; }
+        [Required]
+        public string? Gender { get; set; }
+        [Required]
+        public string? MobileNo { get; set; }
+        [Required]
+        public string? EmailId { get; set; }
+        public bool IsActive { get; set; }
+
+        public virtual ICollection<Enrollment> Enrollments { get; set; }
 
     }
 }

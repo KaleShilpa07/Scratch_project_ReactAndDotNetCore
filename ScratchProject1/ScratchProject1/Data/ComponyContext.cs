@@ -1,7 +1,6 @@
-﻿
+﻿using Microsoft.EntityFrameworkCore;
+using ScratchProject1.Model;
 
-
-using Microsoft.EntityFrameworkCore;
 namespace ScratchProject1
 {
     public class ComponyContext : DbContext
@@ -10,8 +9,29 @@ namespace ScratchProject1
         {
 
         }
-        public DbSet<Student> students { get; set; }
-        public DbSet<Skill> skills { get; set; }
-        public DbSet<Registration> registrations { get; set; }
+
+        public DbSet<Student> Students { get; set; }
+        public DbSet<EmailModel> EmailModels { get; set; }
+        public DbSet<Course> Courses { get; set; }
+        public DbSet<Grade> Grades { get; set; }
+        public DbSet<Enrollment> Enrollments { get; set; }
+
+        protected override void OnModelCreating(ModelBuilder modelBuilder)
+        {
+            modelBuilder.Entity<Enrollment>()
+                .HasOne(e => e.Student)
+                .WithMany(s => s.Enrollments)
+                .HasForeignKey(e => e.StudentId);
+
+            modelBuilder.Entity<Enrollment>()
+                .HasOne(e => e.Course)
+                .WithMany(c => c.Enrollments)
+                .HasForeignKey(e => e.CourseId);
+
+            modelBuilder.Entity<Enrollment>()
+                .HasOne(e => e.Grade)
+                .WithOne(g => g.Enrollment)
+                .HasForeignKey<Grade>(g => g.EnrollmentId);
+        }
     }
 }

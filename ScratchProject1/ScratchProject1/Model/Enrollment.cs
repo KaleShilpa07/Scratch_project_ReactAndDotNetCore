@@ -7,30 +7,15 @@ namespace ScratchProject1.Model
     public class Enrollment
     {
         [Key]
+        [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
         public int EnrollmentId { get; set; }
-
-        [Required]
-        //student id
-        public int Id { get; set; }
-
-        [Required]
+        public int StudentId { get; set; }
         public int CourseId { get; set; }
-
-        [Required]
         public DateTime EnrollmentDate { get; set; }
 
         // Navigation properties
-        [ForeignKey("Id")]
-        public virtual Student Student { get; set; }
-
-        [ForeignKey("CourseId")]
-        public virtual Course Course { get; set; }
-
-        public virtual ICollection<Grade> Grades { get; set; }
-
-      
-
-
+        public virtual Student? Student { get; set; }
+        public virtual Course? Course { get; set; }
 
     }
 }

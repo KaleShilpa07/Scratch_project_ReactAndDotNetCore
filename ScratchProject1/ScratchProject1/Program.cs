@@ -1,12 +1,12 @@
-using Microsoft.AspNetCore.Builder;
+
 using Microsoft.EntityFrameworkCore;
-using Microsoft.OpenApi.Models;
 using ScratchProject1;
+using ScratchProject1.Infrastructure.Irepository;
 
 var builder = WebApplication.CreateBuilder(args);
 
-// ... other configurations
-
+// Add services to the container.
+builder.Services.AddScoped<IStudentrepo, StudentRepository>();
 builder.Services.AddControllersWithViews();
 builder.Services.AddDbContext<ComponyContext>(options =>
 {
@@ -15,6 +15,7 @@ builder.Services.AddDbContext<ComponyContext>(options =>
 
 // Add Swagger configuration
 builder.Services.AddSwaggerGen();
+
 // Add CORS policy
 builder.Services.AddCors(options =>
 {
@@ -28,8 +29,6 @@ builder.Services.AddCors(options =>
 });
 
 var app = builder.Build();
-app.UseSwagger();
-app.UseSwaggerUI();
 
 // Configure the HTTP request pipeline.
 if (!app.Environment.IsDevelopment())
@@ -37,16 +36,24 @@ if (!app.Environment.IsDevelopment())
     // The default HSTS value is 30 days. You may want to change this for production scenarios, see https://aka.ms/aspnetcore-hsts.
     app.UseHsts();
 }
+
 app.UseCors("AllowAllOrigins");
+app.UseSwagger();
+app.UseSwaggerUI(c =>
+{
+    c.SwaggerEndpoint("/swagger/v1/swagger.json", "Your API Name");
+    // Additional configurations if needed
+});
 
+app.UseHttpsRedirection();
+app.UseStaticFiles();
 
+app.UseRouting();
 
-// ... other middleware
-
-app.MapControllerRoute(
-    name: "default",
-    pattern: "{controller}/{action=Index}/{id?}");
-
-app.MapFallbackToFile("index.html");
+app.UseEndpoints(endpoints =>
+{
+    endpoints.MapControllers();
+    // Add other endpoints if needed
+});
 
 app.Run();

@@ -8,8 +8,9 @@ namespace ScratchProject1
     public class Student
     {
         [Key]
+        [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
         //Scaler Property
-        public int Id { get; set; }
+        public int StudentId { get; set; }
         [Required]
         public string? Name { get; set; }
         [Required]
@@ -32,8 +33,8 @@ namespace ScratchProject1
         [Required]
         public string? EmailId { get; set; }
         public bool IsActive { get; set; }
-
-        public virtual ICollection<Enrollment> Enrollments { get; set; }
-
+        // Navigation properties
+        public virtual ICollection<Enrollment>? Enrollments { get; set; }
     }
+
 }

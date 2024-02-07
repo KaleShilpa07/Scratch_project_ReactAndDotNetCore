@@ -6,16 +6,15 @@ using ScratchProject1.Model;
 public class Course
 {
     [Key]
+    [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
     public int CourseId { get; set; }
-
-    [Required]
     public string? CourseName { get; set; }
-
-    [Required]
     public string? CourseCode { get; set; }
-
-    [Required]
+    public string? Grade { get; set; }
     public int Credits { get; set; }
-    public virtual ICollection<Enrollment> Enrollments { get; set; }
+
+    // Navigation properties
+    public virtual ICollection<Enrollment>? Enrollments { get; set; }
+
 
 }

@@ -31,53 +31,26 @@ namespace ScratchProject1.Migrations
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("CourseId"), 1L, 1);
 
                     b.Property<string>("CourseCode")
-                        .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("CourseName")
-                        .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<int>("Credits")
                         .HasColumnType("int");
+
+                    b.Property<string>("Grade")
+                        .HasColumnType("nvarchar(max)");
 
                     b.HasKey("CourseId");
 
                     b.ToTable("CourseTBL");
                 });
 
-            modelBuilder.Entity("ScratchProject1.Model.EmailModel", b =>
-                {
-                    b.Property<int>("id")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("int");
-
-                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("id"), 1L, 1);
-
-                    b.Property<string>("Body")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<string>("Subject")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<string>("To")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
-
-                    b.HasKey("id");
-
-                    b.ToTable("EmailModelTBL");
-                });
-
             modelBuilder.Entity("ScratchProject1.Model.Enrollment", b =>
                 {
-                    b.Property<int>("EnrollmentId")
-                        .ValueGeneratedOnAdd()
+                    b.Property<int>("StudentId")
                         .HasColumnType("int");
-
-                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("EnrollmentId"), 1L, 1);
 
                     b.Property<int>("CourseId")
                         .HasColumnType("int");
@@ -85,47 +58,26 @@ namespace ScratchProject1.Migrations
                     b.Property<DateTime>("EnrollmentDate")
                         .HasColumnType("datetime2");
 
-                    b.Property<int>("Id")
+                    b.Property<int>("EnrollmentId")
+                        .ValueGeneratedOnAdd()
                         .HasColumnType("int");
 
-                    b.HasKey("EnrollmentId");
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("EnrollmentId"), 1L, 1);
+
+                    b.HasKey("StudentId", "CourseId");
 
                     b.HasIndex("CourseId");
-
-                    b.HasIndex("Id");
 
                     b.ToTable("EnrollmentTBL");
                 });
 
-            modelBuilder.Entity("ScratchProject1.Model.Grade", b =>
-                {
-                    b.Property<int>("GradeId")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("int");
-
-                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("GradeId"), 1L, 1);
-
-                    b.Property<int>("EnrollmentId")
-                        .HasColumnType("int");
-
-                    b.Property<string>("GradeValue")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
-
-                    b.HasKey("GradeId");
-
-                    b.HasIndex("EnrollmentId");
-
-                    b.ToTable("GradeTBL");
-                });
-
             modelBuilder.Entity("ScratchProject1.Student", b =>
                 {
-                    b.Property<int>("Id")
+                    b.Property<int>("StudentId")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("int");
 
-                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"), 1L, 1);
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("StudentId"), 1L, 1);
 
                     b.Property<string>("Age")
                         .IsRequired()
@@ -164,7 +116,7 @@ namespace ScratchProject1.Migrations
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
-                    b.HasKey("Id");
+                    b.HasKey("StudentId");
 
                     b.ToTable("StudTBL");
                 });
@@ -179,7 +131,7 @@ namespace ScratchProject1.Migrations
 
                     b.HasOne("ScratchProject1.Student", "Student")
                         .WithMany("Enrollments")
-                        .HasForeignKey("Id")
+                        .HasForeignKey("StudentId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
@@ -188,25 +140,9 @@ namespace ScratchProject1.Migrations
                     b.Navigation("Student");
                 });
 
-            modelBuilder.Entity("ScratchProject1.Model.Grade", b =>
-                {
-                    b.HasOne("ScratchProject1.Model.Enrollment", "Enrollment")
-                        .WithMany("Grades")
-                        .HasForeignKey("EnrollmentId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
-                    b.Navigation("Enrollment");
-                });
-
             modelBuilder.Entity("Course", b =>
                 {
                     b.Navigation("Enrollments");
-                });
-
-            modelBuilder.Entity("ScratchProject1.Model.Enrollment", b =>
-                {
-                    b.Navigation("Grades");
                 });
 
             modelBuilder.Entity("ScratchProject1.Student", b =>
